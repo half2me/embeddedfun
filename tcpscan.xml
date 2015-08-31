@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?><nmaprun start="1439982431" profile_name="Intense scan, all TCP ports" xmloutputversion="1.04" scanner="nmap" version="6.47" startstr="Wed Aug 19 13:07:11 2015" args="nmap -p 1-65535 -T4 -A -v 192.168.1.108"><scaninfo services="1-65535" protocol="tcp" numservices="65535" type="syn"></scaninfo><verbose level="1"></verbose><debugging level="0"></debugging><output type="interactive">
+Starting Nmap 6.47 ( http://nmap.org ) at 2015-08-19 13:07 CEST
+NSE: Loaded 118 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating ARP Ping Scan at 13:07
+Scanning 192.168.1.108 [1 port]
+Completed ARP Ping Scan at 13:07, 0.22s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 13:07
+Completed Parallel DNS resolution of 1 host. at 13:07, 0.01s elapsed
+Initiating SYN Stealth Scan at 13:07
+Scanning 192.168.1.108 [65535 ports]
+Discovered open port 23/tcp on 192.168.1.108
+Discovered open port 554/tcp on 192.168.1.108
+Discovered open port 80/tcp on 192.168.1.108
+Increasing send delay for 192.168.1.108 from 0 to 5 due to 757 out of 1892 dropped probes since last increase.
+Increasing send delay for 192.168.1.108 from 5 to 10 due to 57 out of 141 dropped probes since last increase.
+SYN Stealth Scan Timing: About 6.82% done; ETC: 13:14 (0:07:03 remaining)
+SYN Stealth Scan Timing: About 9.30% done; ETC: 13:18 (0:09:55 remaining)
+SYN Stealth Scan Timing: About 11.77% done; ETC: 13:20 (0:11:22 remaining)
+SYN Stealth Scan Timing: About 14.25% done; ETC: 13:21 (0:12:08 remaining)
+SYN Stealth Scan Timing: About 18.21% done; ETC: 13:22 (0:12:52 remaining)
+Discovered open port 34599/tcp on 192.168.1.108
+SYN Stealth Scan Timing: About 37.76% done; ETC: 13:26 (0:12:04 remaining)
+SYN Stealth Scan Timing: About 44.35% done; ETC: 13:27 (0:11:04 remaining)
+Discovered open port 34567/tcp on 192.168.1.108
+SYN Stealth Scan Timing: About 50.29% done; ETC: 13:27 (0:10:03 remaining)
+SYN Stealth Scan Timing: About 56.00% done; ETC: 13:27 (0:09:01 remaining)
+SYN Stealth Scan Timing: About 61.49% done; ETC: 13:27 (0:07:58 remaining)
+Discovered open port 34561/tcp on 192.168.1.108
+SYN Stealth Scan Timing: About 66.77% done; ETC: 13:28 (0:06:56 remaining)
+SYN Stealth Scan Timing: About 72.04% done; ETC: 13:28 (0:05:52 remaining)
+SYN Stealth Scan Timing: About 77.31% done; ETC: 13:28 (0:04:47 remaining)
+SYN Stealth Scan Timing: About 82.59% done; ETC: 13:28 (0:03:42 remaining)
+SYN Stealth Scan Timing: About 87.64% done; ETC: 13:28 (0:02:38 remaining)
+SYN Stealth Scan Timing: About 92.69% done; ETC: 13:28 (0:01:34 remaining)
+Discovered open port 9527/tcp on 192.168.1.108
+Discovered open port 8899/tcp on 192.168.1.108
+Completed SYN Stealth Scan at 13:33, 1556.85s elapsed (65535 total ports)
+Initiating Service scan at 13:33
+Scanning 8 services on 192.168.1.108
+Service scan Timing: About 50.00% done; ETC: 13:37 (0:02:11 remaining)
+Completed Service scan at 13:35, 131.05s elapsed (8 services on 1 host)
+Initiating OS detection (try #1) against 192.168.1.108
+adjust_timeouts2: packet supposedly had rtt of -175531 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -175531 microseconds.  Ignoring time.
+NSE: Script scanning 192.168.1.108.
+Initiating NSE at 13:35
+Completed NSE at 13:36, 60.45s elapsed
+Nmap scan report for 192.168.1.108
+Host is up (0.00039s latency).
+Not shown: 65527 closed ports
+PORT      STATE SERVICE    VERSION
+23/tcp    open  telnet     NASLite-SMB/Sveasoft Alchemy firmware telnetd
+80/tcp    open  tcpwrapped
+|_http-favicon: Unknown favicon MD5: EC9D1C872C50DD7DA7D826D9C85FC158
+|_http-methods: No Allow or Public header in OPTIONS response (status code 200)
+|_http-title: NETSuveillance WEB
+554/tcp   open  rtsp?
+| rtsp-methods: 
+|_  OPTIONS, DESCRIBE, SETUP, TEARDOWN, GET_PARAMETER, PLAY, PAUSE
+8899/tcp  open  soap       gSOAP soap 2.7
+|_http-methods: No Allow or Public header in OPTIONS response (status code 405)
+|_http-title: Site doesn't have a title (text/xml; charset=utf-8).
+9527/tcp  open  unknown
+|_rpc-grind: ERROR: Script execution failed (use -d to debug)
+34561/tcp open  unknown
+34567/tcp open  unknown
+34599/tcp open  unknown
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at http://www.insecure.org/cgi-bin/servicefp-submit.cgi :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port554-TCP:V=6.47%I=7%D=8/19%Time=55D46981%P=x86_64-pc-linux-gnu%r(Get
+SF:Request,7F,"HTTP/1\.1\x20200\x20OK\r\nContent-Type:\x20application/x-rt
+SF:sp-tunnelled\r\nServer:\x20H264DVR\x201\.0\r\nConnection:\x20close\r\nC
+SF:ache-Control:\x20private\r\n\r\n")%r(RTSPRequest,70,"RTSP/1\.0\x20200\x
+SF:20OK\r\nServer:\x20H264DVR\x201\.0\r\nPublic:\x20OPTIONS,\x20DESCRIBE,\
+SF:x20SETUP,\x20TEARDOWN,\x20GET_PARAMETER,\x20PLAY,\x20PAUSE\r\n\r\n")%r(
+SF:HTTPOptions,70,"RTSP/1\.0\x20200\x20OK\r\nServer:\x20H264DVR\x201\.0\r\
+SF:nPublic:\x20OPTIONS,\x20DESCRIBE,\x20SETUP,\x20TEARDOWN,\x20GET_PARAMET
+SF:ER,\x20PLAY,\x20PAUSE\r\n\r\n")%r(FourOhFourRequest,7F,"HTTP/1\.1\x2020
+SF:0\x20OK\r\nContent-Type:\x20application/x-rtsp-tunnelled\r\nServer:\x20
+SF:H264DVR\x201\.0\r\nConnection:\x20close\r\nCache-Control:\x20private\r\
+SF:n\r\n")%r(SIPOptions,82,"RTSP/1\.0\x20200\x20OK\r\nServer:\x20H264DVR\x
+SF:201\.0\r\ncseq:\x2042\x20OPTIONS\r\nPublic:\x20OPTIONS,\x20DESCRIBE,\x2
+SF:0SETUP,\x20TEARDOWN,\x20GET_PARAMETER,\x20PLAY,\x20PAUSE\r\n\r\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port9527-TCP:V=6.47%I=7%D=8/19%Time=55D4697C%P=x86_64-pc-linux-gnu%r(NU
+SF:LL,2F2,"RTP:\x20onClientConnect\x20enginedId\x200\x20,\x20clientId\x200
+SF:\x20,\x20ip:port\x20192\.168\.1\.107:43851\x20\n\x1b\[0mTransprot:\x20N
+SF:ew\x20Connect\x20ID\[27\]@\[192\.168\.1\.107:33529\]___!!!___\n===&gt;Conn
+SF:ect\x20:\[objID=1\]\x20\[client=27\]\x20ip\[192\.168\.1\.107:33529\]\n\
+SF:x1b\[32;40m18:01:50\|info\x20\x20libdvr:feed\x20WatchDog\nHTTPD:\x20fd:
+SF:\x2035,\x20IP:\x200x6b01a8c0\n\x1b\[0mdoAccept:\x2036\nm_iPushFd:\x2037
+SF:,\x20m_iPopFd:\x2038\nADD_EVENT:\x20iFd\x20-\x2036,\x20iMode\x20-\x2018
+SF:,\x20pEventQue:\x2045800600\nADD_EVENT:\x20iFd\x20-\x2038,\x20iMode\x20
+SF:-\x2018,\x20pEventQue:\x20458009b0\naccepts\x20socket\x2033\x20connecti
+SF:on\x20from\x20IP\x20192\.168\.1\.107\nThread\x201\x20served,socket\x203
+SF:3\x20connection\x20from\x20IP\x20192\.168\.1\.107\nsoap_serve_0\nsoap_s
+SF:erve_1\x20\[Begin\x20soap\]\x20\nsoap_serve_2\x20\[Begin\x20rev\x20data
+SF:\]\nHTTPD:\x20invalid\x20request\n\x1b\[32;40m18:01:55\|info\x20\x20lib
+SF:dvr:feed\x20WatchDog\n\x1b\[0mSave\x20SysTime\x20to\x20Flash:2015-08-18
+SF:\x2018:01:55,\x20Time:318780\x20Min,\x20Trail:318780\x20Min\n")%r(Gener
+SF:icLines,46D,"RTP:\x20onClientConnect\x20enginedId\x200\x20,\x20clientId
+SF:\x200\x20,\x20ip:port\x20192\.168\.1\.107:43851\x20\n\x1b\[0mTransprot:
+SF:\x20New\x20Connect\x20ID\[27\]@\[192\.168\.1\.107:33529\]___!!!___\n===
+SF:&gt;Connect\x20:\[objID=1\]\x20\[client=27\]\x20ip\[192\.168\.1\.107:33529
+SF:\]\n\x1b\[32;40m18:01:50\|info\x20\x20libdvr:feed\x20WatchDog\nHTTPD:\x
+SF:20fd:\x2035,\x20IP:\x200x6b01a8c0\n\x1b\[0mdoAccept:\x2036\nm_iPushFd:\
+SF:x2037,\x20m_iPopFd:\x2038\nADD_EVENT:\x20iFd\x20-\x2036,\x20iMode\x20-\
+SF:x2018,\x20pEventQue:\x2045800600\nADD_EVENT:\x20iFd\x20-\x2038,\x20iMod
+SF:e\x20-\x2018,\x20pEventQue:\x20458009b0\naccepts\x20socket\x2033\x20con
+SF:nection\x20from\x20IP\x20192\.168\.1\.107\nThread\x201\x20served,socket
+SF:\x2033\x20connection\x20from\x20IP\x20192\.168\.1\.107\nsoap_serve_0\ns
+SF:oap_serve_1\x20\[Begin\x20soap\]\x20\nsoap_serve_2\x20\[Begin\x20rev\x2
+SF:0data\]\nHTTPD:\x20invalid\x20request\n\x1b\[32;40m18:01:55\|info\x20\x
+SF:20libdvr:feed\x20WatchDog\n\x1b\[0mSave\x20SysTime\x20to\x20Flash:2015-
+SF:08-18\x2018:01:55,\x20Time:318780\x20Min,\x20Trail:318780\x20Min\nRTP:\
+SF:x20procGet\nRTP:\x20procGet:\x20HTTP/1\.1\x20200\x20OK\r\nContent-Type:
+SF:\x20application/x-rtsp-tunnelled\r\nServer:\x20H264DVR\x201\.0\r\nConne
+SF:ction:\x20close\r\nCache-Control:\x20pri");
+MAC Address: 00:3E:0B:06:ED:55 (Unknown)
+Device type: general purpose
+Running: Linux 2.6.X
+OS CPE: cpe:/o:linux:linux_kernel:2.6
+OS details: Linux 2.6.9 - 2.6.33
+Uptime guess: 0.087 days (since Wed Aug 19 11:30:50 2015)
+Network Distance: 1 hop
+TCP Sequence Prediction: Difficulty=206 (Good luck!)
+IP ID Sequence Generation: All zeros
+Service Info: Host: LocalHost
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   0.39 ms 192.168.1.108
+
+NSE: Script Post-scanning.
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at http://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 1753.11 seconds
+           Raw packets sent: 130171 (5.730MB) | Rcvd: 128935 (5.171MB)
+</output><host comment=""><status state="up"></status><address addrtype="ipv4" vendor="" addr="192.168.1.108"></address><address addrtype="mac" vendor="" addr="00:3E:0B:06:ED:55"></address><hostnames></hostnames><ports><extraports count="65527" state="closed"></extraports><port protocol="tcp" portid="23"><state reason="syn-ack" state="open" reason_ttl="64"></state><service product="NASLite-SMB/Sveasoft Alchemy firmware telnetd" method="probed" conf="10" name="telnet"></service></port><port protocol="tcp" portid="80"><state reason="syn-ack" state="open" reason_ttl="64"></state><service method="probed" conf="8" name="tcpwrapped"></service></port><port protocol="tcp" portid="554"><state reason="syn-ack" state="open" reason_ttl="64"></state><service method="table" conf="3" name="rtsp"></service></port><port protocol="tcp" portid="8899"><state reason="syn-ack" state="open" reason_ttl="64"></state><service product="gSOAP soap" version="2.7" method="probed" conf="10" name="soap"></service></port><port protocol="tcp" portid="9527"><state reason="syn-ack" state="open" reason_ttl="64"></state><service method="table" conf="3" name="unknown"></service></port><port protocol="tcp" portid="34561"><state reason="syn-ack" state="open" reason_ttl="64"></state><service></service></port><port protocol="tcp" portid="34567"><state reason="syn-ack" state="open" reason_ttl="64"></state><service></service></port><port protocol="tcp" portid="34599"><state reason="syn-ack" state="open" reason_ttl="64"></state><service></service></port></ports><os><portused state="open" portid="23" proto="tcp"></portused><portused state="closed" portid="1" proto="tcp"></portused><portused state="closed" portid="38025" proto="udp"></portused><osmatch line="49734" name="Linux 2.6.9 - 2.6.33" accuracy="100"><osclass type="general purpose" osfamily="Linux" vendor="Linux" osgen="2.6.X" accuracy="100"></osclass></osmatch></os><uptime lastboot="Wed Aug 19 11:30:50 2015" seconds="7533"></uptime><tcpsequence index="206" values="D6CD6181,D70D4D27,D6471E0F,D6FA82B5,D6E56256,D6D3AEF4" difficulty="Good luck!"></tcpsequence><ipidsequence values="0,0,0,0,0,0" class="All zeros"></ipidsequence><tcptssequence values="B6698,B66A2,B66AC,B66B6,B66C0,B66CA" class="100HZ"></tcptssequence><trace port="" proto=""><hop rtt="0.39" host="" ipaddr="192.168.1.108" ttl="1"></hop></trace></host><runstats><finished timestr="Wed Aug 19 13:36:23 2015" time="1439984183"></finished><hosts down="0" total="1" up="1"></hosts></runstats></nmaprun>

