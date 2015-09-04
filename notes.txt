@@ -1,4 +1,7 @@
+# Needed: apt-get install cramfsprogs, mtd-utils, upx-ucl
+
 # Default passwords, guest account left on
+telnet: xmhdipc, xc3511, rockTeco, vizxv
 
 rtsp://192.168.1.108:554//user=admin_password=_channel=1_stream=0.sdp
 
@@ -16,7 +19,7 @@ dd if=/dev/mem of=/mnt/samba/ram bs=4096
 
 # binwalk flashdump
 # extract flashdump (cramfs, jffs2)
-apt-get install cramfsprogs, mtd-utils
+sudo cramfsck -x output 0.cramfs
 
 jffs2reader mtdblock7 # -d: directory, -f: cat out file
 jffs2dump mtdblock7
