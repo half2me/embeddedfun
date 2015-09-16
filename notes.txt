@@ -69,7 +69,7 @@ set LPORT 4444
 exploit # :)
 
 # Video fun (Replacing the RTSP Stream)
-
+# replace values in mt.js "rtsp://"
 
 # Compile our own software for the device
 #compile with arm-gcc:
